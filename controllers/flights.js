@@ -1,3 +1,9 @@
-const Flight = require('./models/flight');
+const Flight = require('../models/flight');
 
-Flight.create()
+module.exports = {
+    new: newFlight,
+}
+
+function newFlight(req, res) {
+    res.render('flights/new');
+}
