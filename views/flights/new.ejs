@@ -18,18 +18,18 @@
         </label><br>
         <label>Airport: 
             <select name="airport">
-                <option value="aus">AUS</option>
-                <option value="dfw">DFW</option>
-                <option value="den">DEN</option>
-                <option value="lax">LAX</option>
-                <option value="san">SAN</option>
+                <option value="AUS">AUS</option>
+                <option value="DFW">DFW</option>
+                <option value="DEN" selected>DEN</option> <!-- makes DEN the default -->
+                <option value="LAX">LAX</option>
+                <option value="SAN">SAN</option>
             </select>
         </label><br>
         <label>Flight #:
             <input type="text" name="flightNo">
         </label><br>
         <label>Departs:
-            <input type="text" name="depart">
+            <input type="datetime-local" name="depart"> <!-- makes user enter valid date and time and not anything they want -->
         </label><br>
         <input type="submit" value="Add Flight">
     </form>

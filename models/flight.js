@@ -23,20 +23,18 @@ const flightSchema = new Schema ({ //define schema
         default: 'DEN'
     },
 
-    flightNo: { //not sure 
+    flightNo: { //not sure about min and max 
         type: Number, 
         required: true, 
-        default: function() {
-            return new Date().getFullYear();
-        },
         min: 10,
         max: 9999,
     },
     
     departs: {
-        type: Date,  //not sure
+        type: Date,  //not sure about default
         default: function() {
-            return new Date().getFullYear();
+            return Date.now() + 365;
+            // return new Date().getFullYear();
         },
     },
 
