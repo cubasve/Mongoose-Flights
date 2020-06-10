@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>Document</title>
+    <title>Mongoose Flights</title>
 </head>
 <body>
     <h2>Book a New Flight</h2>
@@ -15,7 +15,8 @@
                 <option value="southwest">Southwest</option>
                 <option value="united">United</option>
             </select>
-        </label><br>
+        </label>
+        <br>
         <label>Airport: 
             <select name="airport">
                 <option value="AUS">AUS</option>
@@ -24,13 +25,16 @@
                 <option value="LAX">LAX</option>
                 <option value="SAN">SAN</option>
             </select>
-        </label><br>
+        </label>
+        <br>
         <label>Flight #:
-            <input type="text" name="flightNo">
-        </label><br>
+            <input type="number" name="flightNo" min="0" max="9999"> <!-- change input type from text to number -->
+        </label>
+        <br>
         <label>Departs:
             <input type="datetime-local" name="depart"> <!-- makes user enter valid date and time and not anything they want -->
-        </label><br>
+        </label>
+        <br>
         <input type="submit" value="Add Flight">
     </form>
     

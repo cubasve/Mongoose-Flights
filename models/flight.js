@@ -7,9 +7,7 @@ const destinationSchema = new Schema ({ //subdocument
         enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN']
     },
     arrival: Date,
-})
-
-
+});
 
 const flightSchema = new Schema ({ //define schema
     airline: {
