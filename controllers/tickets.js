@@ -11,15 +11,6 @@ function newTicket(req, res) {
         title: 'New Ticket',
         tickets: req.params.id
     });
-    // Flight.findById(req.params.id, function(err, flight) {
-    //     res.render('tickets/new', {flight})
-    // });
-    // Ticket.find({}, function(err, tickets) {
-    //     res.render('/flights/tickets/new', {
-    //         title: 'Add Ticket',
-    //         tickets,
-    //     });
-    // });
 }
 
 function create(req, res) {
@@ -31,17 +22,3 @@ function create(req, res) {
         res.redirect(`/flights/${req.params.id}`);
     });
 }
-
-
-// function newFlight(req, res) { //displays new flight form
-//     res.render('flights/new');
-// }
-
-// function create(req, res) { //handles new flight form submission
-//     const flight = new Flight(req.body);
-//     flight.save(function(err) {
-//         if (err) return res.render('flights/new'); //if there's an error, re-render the form - console.log the error
-//         console.log(flight);
-//         res.redirect('/flights'); //else, redirect to flights/new with a new form
-//     });
-// }

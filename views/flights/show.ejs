@@ -64,8 +64,11 @@
             <tbody>
                 <% flight.destinations.forEach (function(dest) {%>
                 <tr>
-                    <%= dest.airport %>
-                    <%= dest.arrival %>
+                    <ul>
+                        <li><%= dest.airport %></li>
+                        <li><%= dest.arrival %></li>
+
+                    </ul>
                 </tr>
                 <% }); %>
             </tbody>
@@ -76,7 +79,8 @@
 
     <!-- Tickets -->
     <h1>FLIGHT TICKETS</h1>
-
+    <a href="/flights/<%= flight._id %>/tickets/new"><button>New Ticket</button></a> 
+    
     <% if (tickets.length > 0) { %> 
     <table>
         <thead>
@@ -97,10 +101,6 @@
     <% } else { %>
         <p>No Tickets Yet</p>
     <% } %>
-
-    <!-- <input type="submit" value="Add Ticket"> -->
-    
-    <a href="/flights/<%= flight._id %>/tickets/new"><button>Add Ticket</button></a>
 
 </body>
 </html>

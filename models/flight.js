@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
-const destinationSchema = new Schema ({ //subdocument of flightSchema - embed
+const destinationSchema = new Schema ({ 
     airport: {
         type: String, 
         enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
@@ -9,7 +9,7 @@ const destinationSchema = new Schema ({ //subdocument of flightSchema - embed
     arrival: Date,
 });
 
-const flightSchema = new Schema ({ //define schema
+const flightSchema = new Schema ({ 
     airline: {
         type: String, 
         enum: ['American', 'Southwest', 'United'],
@@ -21,7 +21,7 @@ const flightSchema = new Schema ({ //define schema
         default: 'DEN',
     },
 
-    flightNo: { //not sure about min and max 
+    flightNo: { 
         type: Number, 
         required: true, 
         min: 10,
@@ -29,7 +29,7 @@ const flightSchema = new Schema ({ //define schema
     },
     
     departs: {
-        type: Date,  //not sure about default
+        type: Date,  
         default: function() {
             // return Date.now() + 365;
             // return new Date().getFullYear();
@@ -40,4 +40,4 @@ const flightSchema = new Schema ({ //define schema
     destinations: [destinationSchema],
 });
 
-module.exports = mongoose.model('Flight', flightSchema); //compile schema into model
+module.exports = mongoose.model('Flight', flightSchema);
