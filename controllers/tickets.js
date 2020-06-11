@@ -1,15 +1,28 @@
 const Ticket = require('../models/ticket');
+const Flight = require('../models/flight');
 
 module.exports = {
-    new: newTicket,
-    create: createTickets,
+    newTicket, //new: newTicket was creating an error 
+    create, //create: create was creating an error too so I removed both - it's working
 }
 
 function newTicket(req, res) {
-    res.render('flights/tickets/new')
+    res.render('flights/:id/tickets/new', {
+        title: 'New Ticket',
+        tickets: req.params.id
+    });
+    // Flight.findById(req.params.id, function(err, flight) {
+    //     res.render('tickets/new', {flight})
+    // });
+    // Ticket.find({}, function(err, tickets) {
+    //     res.render('/flights/tickets/new', {
+    //         title: 'Add Ticket',
+    //         tickets,
+    //     });
+    // });
 }
 
-function createTickets(req, res) {
+function create(req, res) {
     req.body.flight = req.params.id;
     const newTicket = new Ticket(req.body);
     newTicket.save(function(err) {

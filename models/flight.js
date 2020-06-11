@@ -33,7 +33,7 @@ const flightSchema = new Schema ({ //define schema
         default: function() {
             // return Date.now() + 365;
             // return new Date().getFullYear();
-            Date.now() + 365 * 24 * 60 * 60000,
+            Date.now() + 365 * 24 * 60 * 60000; //365 days x 24 hours x 60 minutes x 60000 seconds
         },
     },
 

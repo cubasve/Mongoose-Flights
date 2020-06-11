@@ -10,3 +10,8 @@ a {
 nav {
   display: inline-block;
 }
+
+table > tr {
+  padding: 5px;
+  margin: 5px;
+}

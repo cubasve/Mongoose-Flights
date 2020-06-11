@@ -1,10 +1,10 @@
 const Flight = require('../models/flight');
 
 module.exports = {
-    create: createDestinations,
+    create: create,
 }
 
-function createDestinations(req, res) {
+function create(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
         flight.destinations.push(req.body);
         flight.save(function(err) {
