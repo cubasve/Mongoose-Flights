@@ -7,13 +7,18 @@
     <title>Mongoose Flights</title>
 </head>
 <body>
+    <nav>
+        <a href="/flights/new">ADD FLIGHT</a>
+        <a href="/flights">ALL FLIGHTS</a>
+    </nav>
+
     <h2>Book a New Flight</h2>
     <form action="/flights" method="POST">
         <label>Airline:
             <select name="airline">
-                <option value="american">American</option>
-                <option value="southwest">Southwest</option>
-                <option value="united">United</option>
+                <option value="American">American</option>
+                <option value="Southwest">Southwest</option>
+                <option value="United">United</option>
             </select>
         </label>
         <br>
@@ -21,7 +26,7 @@
             <select name="airport">
                 <option value="AUS">AUS</option>
                 <option value="DFW">DFW</option>
-                <option value="DEN" selected>DEN</option> <!-- makes DEN the default -->
+                <option value="DEN" selected>DEN</option> 
                 <option value="LAX">LAX</option>
                 <option value="SAN">SAN</option>
             </select>
@@ -31,8 +36,8 @@
             <input type="number" name="flightNo" min="0" max="9999"> <!-- change input type from text to number -->
         </label>
         <br>
-        <label>Departs:
-            <input type="datetime-local" name="depart"> <!-- makes user enter valid date and time and not anything they want -->
+        <label>Departure:
+            <input type="datetime-local" name="departs"> <!-- makes user enter valid date and time and not anything they want -->
         </label>
         <br>
         <input type="submit" value="Add Flight">

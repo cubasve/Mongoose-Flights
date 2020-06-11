@@ -7,7 +7,56 @@
     <title>Mongoose Flights</title>
 </head>
 <body>
-    
-    
+    <nav>
+        <a href="/flights/new">ADD FLIGHT</a>
+        <a href="/flights">ALL FLIGHTS</a>
+    </nav>
+
+    <!-- FLIGHT DETAILS -->
+    <h1>FLIGHT DETAILS</h1>
+    <table>
+        <td>Airline: <%= flight.airline =></td>
+        <td>Airport: <%= flight.airport =></td>
+        <td>Flight: <%= flight.flightNo =></td>
+        <td>Departure: <%= flight.departs =></td>
+    </table>
+
+    <!-- DESTINATIONS -->
+    <h1>FLIGHT DESTINATIONS</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Airport</th>
+                <th>Arrival</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% flight.destination.forEach (function(dest) {%>
+            <tr>
+                <%= flight.destination.airport %>
+                <%= flight.destination.arrival %>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <form action="/flights/<% flight.id %>/destinations" method="POST">
+        <label>Airport: 
+            <select name="airport">
+                <option value="AUS">AUS</option>
+                <option value="DFW">DFW</option>
+                <option value="DEN">DEN</option> 
+                <option value="LAX">LAX</option>
+                <option value="SAN">SAN</option>
+            </select>
+        </label>
+        <br>
+        <label>Arrival:
+            <input type="datetime-local" name="arrival"> 
+        </label>
+        <br>
+        <input type="submit" value="Add Destination">
+    </form>
+
 </body>
 </html>
