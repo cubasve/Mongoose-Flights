@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-require('./config/database'); //connect to database with Mongoose
+require('./config/database'); 
 
 const indexRouter = require('./routes/index');
 const flightsRouter = require('./routes/flights');
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/flights', flightsRouter);
 app.use('/', destinationsRouter); 
-app.use('/flights', ticketsRouter); //should be '/' but requirements want /flights/:id/tickets/new
+app.use('/flights', ticketsRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

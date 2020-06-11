@@ -2,8 +2,8 @@ const Ticket = require('../models/ticket');
 const Flight = require('../models/flight');
 
 module.exports = {
-    newTicket, //new: newTicket was creating an error 
-    create, //create: create was creating an error too so I removed both - it's working
+    newTicket, 
+    create, 
 }
 
 function newTicket(req, res) {

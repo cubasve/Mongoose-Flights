@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const ticketSchema = new Schema({
     seat: {
         type: String,
-        match: /[A-F][1-9]\d?/, //Must be 'A1' through 'F99'
+        match: /[A-F][1-9]\d?/, 
     },
     price: {
         type: Number,
@@ -12,9 +12,8 @@ const ticketSchema = new Schema({
     },
 
     flight: {
-        type: Schema.Types.ObjectId, //type: ObjectId won't work 
-        //type: mongoose.Schema.Types.ObjectId - no need since mongoose.Schema = Schema (line 2)
-        ref: 'Flight', //enables population
+        type: Schema.Types.ObjectId, 
+        ref: 'Flight', 
     },
 });
 

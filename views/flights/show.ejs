@@ -12,7 +12,6 @@
         <a href="/flights">ALL FLIGHTS</a>
     </nav>
 
-    <!-- FLIGHT DETAILS -->
     <h1>FLIGHT DETAILS</h1>
     <table>
         <thead>
@@ -33,7 +32,6 @@
         </tbody>
     </table>
 
-    <!-- DESTINATIONS -->
     <h1>FLIGHT DESTINATIONS</h1>
     <form action="/flights/<%= flight.id %>/destinations" method="POST">
         <label>Airport: 
@@ -77,7 +75,6 @@
             <p>No Destinations Yet</p>
         <% } %>
 
-    <!-- Tickets -->
     <h1>FLIGHT TICKETS</h1>
     <a href="/flights/<%= flight._id %>/tickets/new"><button>New Ticket</button></a> 
     
