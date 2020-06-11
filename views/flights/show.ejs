@@ -64,8 +64,8 @@
             <tbody>
                 <% flight.destinations.forEach (function(dest) {%>
                 <tr>
-                    <%= flight.destination.airport %>
-                    <%= flight.destination.arrival %>
+                    <%= dest.airport %>
+                    <%= dest.arrival %>
                 </tr>
                 <% }); %>
             </tbody>
