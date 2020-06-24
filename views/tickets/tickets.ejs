@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Mongoose Flights</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <a href="/flights/new">ADD FLIGHT</a>
-        <a href="/flights">ALL FLIGHTS</a>
+      <a href="/flights/new">ADD FLIGHT</a>
+      <a href="/flights">ALL FLIGHTS</a>
     </nav>
 
-<h1>FLIGHT TICKET</h1>
-<form action="/flights/<%= flight._id %>/tickets/new" method="POST"> 
-    <label>Seat:
-        <input type="text" name="seat" required patten="[A-F][1-9]\d?">
-    </label>
-    <br>
-    <label>Price:
-        <input type="number" name="price" min="0"> 
-    </label>
-    <br>
-    <input type="submit" value="Create Ticket">
-</form>
-</body>
+    <h1>FLIGHT TICKET</h1>
+    <form action="/<%= flight._id %>/tickets/new" method="POST">
+      <label
+        >Seat:
+        <input type="text" name="seat" required patten="[A-F][1-9]\d?" />
+      </label>
+      <br />
+      <label
+        >Price:
+        <input type="number" name="price" min="0" />
+      </label>
+      <br />
+      <input type="submit" value="Create Ticket" />
+    </form>
+  </body>
 </html>
